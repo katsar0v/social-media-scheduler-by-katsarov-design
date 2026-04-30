@@ -1,0 +1,33 @@
+# Dependencies
+/vendor/
+/node_modules/
+
+# Build outputs
+/dist/
+/build/
+
+# Testing
+.phpunit.result.cache
+wp-cli.local.yml
+
+# WordPress development environment
+.wp-env/
+
+# Translations
+/languages/*.json
+/languages/*.pot.bak
+
+# Logs
+*.log
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.bak

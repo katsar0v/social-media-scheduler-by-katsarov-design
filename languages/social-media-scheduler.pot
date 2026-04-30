@@ -1,0 +1,1006 @@
+# Translation template for Social Media Scheduler.
+# Copyright (C) 2026 Katsarov Design
+# This file is distributed under the same license as the Social Media Scheduler package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Social Media Scheduler 0.1.0\n"
+"Report-Msgid-Bugs-To: https://sebeotkrivatel.com\n"
+"POT-Creation-Date: 2026-04-30 09:18+0300\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: xgettext\n"
+"X-Domain: social-media-scheduler\n"
+
+#. translators: 1: Instagram media container step, 2: response body.
+#: includes/Service/Publish/MetaPublisher.php:98
+#, php-format
+msgid "%1$s failed: %2$s"
+msgstr ""
+
+#. translators: 1: Instagram publishing step, 2: platform status message.
+#: includes/Service/Publish/MetaPublisher.php:519
+#, php-format
+msgid "%1$s processing failed: %2$s"
+msgstr ""
+
+#: assets/js/calendar.js:263
+#, javascript-format
+msgid "%1$s: %2$s"
+msgstr ""
+
+#. translators: %d: number of connected Meta accounts.
+#: includes/Admin/AdminMenu.php:158
+#, php-format
+msgid "%d Meta accounts connected successfully."
+msgstr ""
+
+#. translators: %s: account platform with an expired token.
+#: includes/Service/PublishService.php:479
+#, php-format
+msgid "%s access token expired. Please reconnect."
+msgstr ""
+
+#. translators: %s: settings field key.
+#: includes/Service/SettingsService.php:121
+#, php-format
+msgid "%s must be a valid HTTP URL."
+msgstr ""
+
+#. translators: %s: Instagram publishing step.
+#: includes/Service/Publish/MetaPublisher.php:531
+#, php-format
+msgid "%s processing timed out"
+msgstr ""
+
+#. translators: %s: Instagram publishing step.
+#: includes/Service/Publish/MetaPublisher.php:508
+#, php-format
+msgid "%s status lookup failed"
+msgstr ""
+
+#: assets/js/calendar.js:278 assets/js/calendar.js:327
+#, javascript-format
+msgid "%s story"
+msgstr ""
+
+#. translators: %s: request context.
+#: includes/Service/Publish/MetaPublisher.php:667
+#: includes/Service/Publish/TikTokPublisher.php:148
+#: includes/Service/ExternalPosts/MetaPostFetcher.php:350
+#, php-format
+msgid "%s: invalid JSON response"
+msgstr ""
+
+#: includes/Rest/RestRouter.php:255
+msgid "A valid REST nonce is required."
+msgstr ""
+
+#: views/accounts.php:62
+msgid "Account"
+msgstr ""
+
+#: includes/Admin/AdminMenu.php:48
+msgid "Accounts"
+msgstr ""
+
+#: views/accounts.php:65
+msgid "Actions"
+msgstr ""
+
+#: views/accounts.php:48
+msgid ""
+"Add the Meta and TikTok OAuth app credentials in Settings before connecting "
+"accounts."
+msgstr ""
+
+#: views/accounts.php:49
+msgid ""
+"Add the missing OAuth app credentials in Settings before connecting that "
+"account."
+msgstr ""
+
+#: views/calendar.php:37
+msgid "All"
+msgstr ""
+
+#: views/composer.php:67 views/settings.php:63
+msgid "Approved"
+msgstr ""
+
+#: includes/Service/PostService.php:169
+msgid "Attachment IDs must be an array of non-negative integers."
+msgstr ""
+
+#: includes/Service/MediaService.php:62
+msgid "Attachment does not have a public URL."
+msgstr ""
+
+#: includes/Service/MediaService.php:87
+msgid "Attachment source file is not readable."
+msgstr ""
+
+#: views/settings.php:96
+msgid "Base URL Override"
+msgstr ""
+
+#: views/settings.php:66
+msgid "Brand Hashtags"
+msgstr ""
+
+#: includes/Admin/AdminMenu.php:46 views/composer.php:21
+msgid "Calendar"
+msgstr ""
+
+#: views/settings.php:69
+msgid "Calendar Week Start"
+msgstr ""
+
+#: views/calendar.php:22
+msgid "Calendar controls"
+msgstr ""
+
+#: includes/Service/SettingsService.php:131
+msgid "Calendar week start must be 0 (Sunday) or 1 (Monday)."
+msgstr ""
+
+#: views/composer.php:69
+msgid "Cancelled"
+msgstr ""
+
+#: views/composer.php:29
+msgid "Caption"
+msgstr ""
+
+#: includes/Service/PostService.php:237
+msgid "Caption cannot be empty."
+msgstr ""
+
+#: includes/Service/PostService.php:196
+msgid "Caption is required."
+msgstr ""
+
+#: views/composer.php:80
+msgid "Choose Media"
+msgstr ""
+
+#: views/settings.php:34
+msgid "Configuration"
+msgstr ""
+
+#: views/accounts.php:27
+msgid "Configure Meta"
+msgstr ""
+
+#: views/accounts.php:31
+msgid "Configure TikTok"
+msgstr ""
+
+#: views/accounts.php:27
+msgid "Connect Meta"
+msgstr ""
+
+#: views/accounts.php:31
+msgid "Connect TikTok"
+msgstr ""
+
+#: views/accounts.php:64
+msgid "Connected"
+msgstr ""
+
+#: views/accounts.php:22
+msgid "Connected Accounts"
+msgstr ""
+
+#: views/composer.php:28
+msgid "Content"
+msgstr ""
+
+#: includes/Admin/AdminMenu.php:167 includes/Rest/AuthController.php:185
+msgid "Could not connect the Meta account. Please try again."
+msgstr ""
+
+#: includes/Admin/AdminMenu.php:166 includes/Rest/AuthController.php:184
+msgid "Could not connect the TikTok account. Please try again."
+msgstr ""
+
+#: assets/js/calendar.js:148
+msgid "Could not load calendar posts."
+msgstr ""
+
+#: views/composer.php:16
+msgid "Create post"
+msgstr ""
+
+#: views/composer.php:60
+msgid "Date and time"
+msgstr ""
+
+#: assets/js/composer.js:91
+msgid "Date and time are required."
+msgstr ""
+
+#: views/settings.php:52
+msgid "Default Platform"
+msgstr ""
+
+#: views/settings.php:59
+msgid "Default Status"
+msgstr ""
+
+#. translators: %s: comma-separated list of allowed social platforms.
+#: includes/Service/SettingsService.php:88
+#, php-format
+msgid "Default platform must be one of: %s"
+msgstr ""
+
+#. translators: %s: comma-separated list of allowed post statuses.
+#: includes/Service/SettingsService.php:102
+#, php-format
+msgid "Default post status must be one of: %s"
+msgstr ""
+
+#: views/composer.php:32
+msgid "Destination"
+msgstr ""
+
+#: views/accounts.php:84
+msgid "Disconnect"
+msgstr ""
+
+#: assets/js/accounts.js:34
+msgid "Disconnect this account?"
+msgstr ""
+
+#: assets/js/accounts.js:39
+msgid "Disconnected."
+msgstr ""
+
+#: assets/js/accounts.js:36
+msgid "Disconnecting…"
+msgstr ""
+
+#: includes/Admin/CronNoticeRenderer.php:59
+msgid "Dismiss this notice"
+msgstr ""
+
+#: views/calendar.php:38 views/composer.php:65 views/settings.php:61
+msgid "Draft"
+msgstr ""
+
+#: views/settings.php:42
+msgid "Editorial Defaults"
+msgstr ""
+
+#: views/calendar.php:13
+msgid "Editorial calendar"
+msgstr ""
+
+#: includes/Cron/CronRegistrar.php:33
+msgid "Every minute"
+msgstr ""
+
+#: includes/Cron/CronRegistrar.php:38
+msgid "Every six hours"
+msgstr ""
+
+#: assets/js/calendar.js:329
+msgid "External post"
+msgstr ""
+
+#: views/settings.php:55
+msgid "Facebook"
+msgstr ""
+
+#: includes/Service/Publish/MetaPublisher.php:296
+msgid "Facebook Stories require a video file."
+msgstr ""
+
+#: includes/Service/Publish/MetaPublisher.php:334
+msgid "Facebook Story publish failed"
+msgstr ""
+
+#: includes/Service/Publish/MetaPublisher.php:307
+msgid "Facebook Story upload start failed"
+msgstr ""
+
+#: includes/Service/Publish/MetaPublisher.php:324
+msgid "Facebook Story video upload failed"
+msgstr ""
+
+#: includes/Service/Publish/MetaPublisher.php:189
+msgid "Facebook feed publish failed"
+msgstr ""
+
+#: includes/Service/Publish/MetaPublisher.php:150
+msgid "Facebook multi-photo publish failed"
+msgstr ""
+
+#: includes/Service/Publish/MetaPublisher.php:609
+msgid "Facebook permalink lookup failed"
+msgstr ""
+
+#: includes/Service/Publish/MetaPublisher.php:168
+msgid "Facebook photo publish failed"
+msgstr ""
+
+#: includes/Service/Publish/MetaPublisher.php:131
+msgid "Facebook photo upload failed"
+msgstr ""
+
+#: includes/Service/Publish/MetaPublisher.php:417
+msgid "Facebook post deletion failed"
+msgstr ""
+
+#: includes/Service/ExternalPosts/MetaPostFetcher.php:104
+msgid "Facebook published posts fetch failed"
+msgstr ""
+
+#: includes/Service/Publish/MetaPublisher.php:173
+msgid "Facebook scheduled photo lookup failed"
+msgstr ""
+
+#: includes/Service/PublishService.php:362
+msgid "Facebook scheduled post was not found after its scheduled publish time."
+msgstr ""
+
+#: includes/Service/ExternalPosts/MetaPostFetcher.php:149
+msgid "Facebook scheduled posts fetch failed"
+msgstr ""
+
+#: includes/Service/Publish/MetaPublisher.php:495
+msgid ""
+"Facebook scheduled publish time must be at least 10 minutes in the future."
+msgstr ""
+
+#: includes/Service/ExternalPosts/MetaPostFetcher.php:301
+msgid "Facebook stories fetch failed"
+msgstr ""
+
+#: includes/Service/ExternalPosts/MetaPostFetcher.php:181
+msgid "Facebook unpublished feed fetch failed"
+msgstr ""
+
+#: includes/Service/ExternalPosts/MetaPostFetcher.php:213
+msgid "Facebook videos fetch failed"
+msgstr ""
+
+#: views/calendar.php:41
+msgid "Failed"
+msgstr ""
+
+#: includes/Service/TokenExchange.php:246
+msgid "Failed to fetch Meta businesses."
+msgstr ""
+
+#: includes/Service/TokenExchange.php:153
+msgid "Failed to get TikTok access token."
+msgstr ""
+
+#: includes/Service/TokenExchange.php:70
+msgid "Failed to get long-lived user token."
+msgstr ""
+
+#: includes/Service/TokenExchange.php:48
+msgid "Failed to get user access token."
+msgstr ""
+
+#: includes/Service/TokenExchange.php:182
+msgid "Failed to refresh Meta token."
+msgstr ""
+
+#: includes/Service/TokenExchange.php:211
+msgid "Failed to refresh TikTok token."
+msgstr ""
+
+#: views/calendar.php:36
+msgid "Filter by status"
+msgstr ""
+
+#: assets/js/calendar.js:350 assets/js/calendar.js:351
+msgid "Fri"
+msgstr ""
+
+#: assets/js/calendar.js:33
+msgid "Image media"
+msgstr ""
+
+#: views/composer.php:66 views/settings.php:62
+msgid "In review"
+msgstr ""
+
+#: views/settings.php:54
+msgid "Instagram"
+msgstr ""
+
+#: includes/Service/PublishService.php:131
+msgid "Instagram Business Account ID is not configured."
+msgstr ""
+
+#: includes/Service/Publish/MetaPublisher.php:357
+msgid "Instagram Stories require a video file."
+msgstr ""
+
+#: includes/Service/Publish/MetaPublisher.php:395
+msgid "Instagram Story container"
+msgstr ""
+
+#: includes/Service/Publish/MetaPublisher.php:403
+msgid "Instagram Story publish failed"
+msgstr ""
+
+#: includes/Service/Publish/MetaPublisher.php:374
+msgid "Instagram Story upload session failed"
+msgstr ""
+
+#: includes/Service/Publish/MetaPublisher.php:391
+msgid "Instagram Story video upload failed"
+msgstr ""
+
+#: includes/Service/Publish/MetaPublisher.php:241
+msgid "Instagram carousel container"
+msgstr ""
+
+#: includes/Service/Publish/MetaPublisher.php:238
+msgid "Instagram carousel container creation"
+msgstr ""
+
+#: includes/Service/Publish/MetaPublisher.php:225
+msgid "Instagram carousel item creation"
+msgstr ""
+
+#: includes/Service/Publish/MetaPublisher.php:250
+msgid "Instagram carousel publish failed"
+msgstr ""
+
+#: includes/Service/Publish/MetaPublisher.php:270
+msgid "Instagram container"
+msgstr ""
+
+#: includes/Service/Publish/MetaPublisher.php:269
+msgid "Instagram container creation"
+msgstr ""
+
+#. translators: %s: media filename.
+#: includes/Service/Publish/MetaPublisher.php:545
+#, php-format
+msgid ""
+"Instagram image posts require JPEG media. \"%s\" must be converted to JPG "
+"before publishing."
+msgstr ""
+
+#: includes/Service/PostService.php:456
+msgid ""
+"Instagram image posts require JPEG media. Convert unsupported image formats "
+"to JPG before uploading."
+msgstr ""
+
+#: includes/Service/ExternalPosts/MetaPostFetcher.php:251
+msgid "Instagram media fetch failed"
+msgstr ""
+
+#: includes/Service/Publish/MetaPublisher.php:618
+msgid "Instagram permalink lookup failed"
+msgstr ""
+
+#: includes/Service/Publish/MetaPublisher.php:205
+msgid "Instagram posts require at least one media item."
+msgstr ""
+
+#: includes/Service/Publish/MetaPublisher.php:279
+msgid "Instagram publish failed"
+msgstr ""
+
+#: includes/Service/ExternalPosts/MetaPostFetcher.php:276
+msgid "Instagram stories fetch failed"
+msgstr ""
+
+#: assets/js/calendar.js:144
+msgid "Loading calendar..."
+msgstr ""
+
+#: views/composer.php:77
+msgid "Media"
+msgstr ""
+
+#: includes/Service/Publish/MetaPublisher.php:640
+msgid "Media URL is not valid for Meta publishing."
+msgstr ""
+
+#: assets/js/calendar.js:25
+msgid "Media carousel"
+msgstr ""
+
+#. translators: %s: media filename.
+#: includes/Service/Publish/MetaPublisher.php:600
+#, php-format
+msgid "Media file not found: %s"
+msgstr ""
+
+#. translators: %d: WordPress media attachment ID.
+#: includes/Service/MediaService.php:136
+#, php-format
+msgid "Media item with ID %d was not found."
+msgstr ""
+
+#: views/settings.php:78
+msgid "Meta App ID"
+msgstr ""
+
+#: includes/Service/MetaOAuthService.php:149
+msgid ""
+"Meta App ID and App Secret must be configured before connecting an account."
+msgstr ""
+
+#: includes/Service/TokenExchange.php:27
+msgid "Meta App ID, Meta App Secret, and Meta Redirect URI must be set."
+msgstr ""
+
+#: views/settings.php:81
+msgid "Meta App Secret"
+msgstr ""
+
+#: views/settings.php:84
+msgid "Meta Redirect URI"
+msgstr ""
+
+#: includes/Admin/AdminMenu.php:161
+msgid "Meta account connected successfully."
+msgstr ""
+
+#: includes/Service/PublishService.php:62
+msgid "Meta account is missing a page ID or access token."
+msgstr ""
+
+#. translators: %s: Facebook page name.
+#: views/composer.php:44
+#, php-format
+msgid "Meta — %s (Facebook)"
+msgstr ""
+
+#. translators: %s: Instagram business account name.
+#: views/composer.php:48
+#, php-format
+msgid "Meta — %s (Instagram)"
+msgstr ""
+
+#: includes/Rest/AuthController.php:58 includes/Rest/AuthController.php:84
+msgid "Missing OAuth authorization code."
+msgstr ""
+
+#: assets/js/calendar.js:350 assets/js/calendar.js:351
+msgid "Mon"
+msgstr ""
+
+#: views/settings.php:71
+msgid "Monday"
+msgstr ""
+
+#: includes/Admin/AdminMenu.php:47 views/calendar.php:18 views/composer.php:17
+msgid "New Post"
+msgstr ""
+
+#: views/calendar.php:28
+msgid "Next month"
+msgstr ""
+
+#: includes/Service/TokenExchange.php:77
+msgid "No Facebook pages found for this user."
+msgstr ""
+
+#: includes/Service/TokenExchange.php:250
+msgid "No Facebook pages or businesses found for this user."
+msgstr ""
+
+#: views/accounts.php:71
+msgid "No accounts connected yet."
+msgstr ""
+
+#: views/composer.php:72
+msgid "Notes"
+msgstr ""
+
+#: views/settings.php:77
+msgid "OAuth Apps"
+msgstr ""
+
+#: includes/Rest/AuthController.php:63 includes/Rest/AuthController.php:89
+#: includes/Service/MetaOAuthService.php:134
+#: includes/Service/TikTokOAuthService.php:96
+msgid "OAuth state is invalid or expired."
+msgstr ""
+
+#: includes/Service/PostService.php:253 includes/Service/PostService.php:331
+msgid "Platform cannot be empty."
+msgstr ""
+
+#: includes/Service/PostService.php:199
+msgid "Platform is required."
+msgstr ""
+
+#. translators: %s: comma-separated list of allowed social platforms.
+#: includes/Service/PostService.php:366
+#, php-format
+msgid "Platform must be one of: %s"
+msgstr ""
+
+#: includes/Service/PublishService.php:456
+msgid "Post has no connected account selected. Please choose an account first."
+msgstr ""
+
+#: assets/js/composer.js:140
+msgid "Post saved."
+msgstr ""
+
+#: includes/Service/PublishService.php:51
+#: includes/Service/PublishService.php:191
+msgid "Post was not found."
+msgstr ""
+
+#. translators: %d: scheduled post ID.
+#: includes/Service/PostService.php:74
+#, php-format
+msgid "Post with ID %d was not found."
+msgstr ""
+
+#: views/calendar.php:24
+msgid "Previous month"
+msgstr ""
+
+#: views/accounts.php:63
+msgid "Provider"
+msgstr ""
+
+#: includes/Service/Publish/MetaPublisher.php:650
+msgid ""
+"Public media URLs must contain only US-ASCII URL characters after encoding."
+msgstr ""
+
+#: views/composer.php:93
+msgid "Publish Now"
+msgstr ""
+
+#: views/composer.php:68
+msgid "Publish or schedule"
+msgstr ""
+
+#: assets/js/composer.js:151
+msgid "Publish request sent."
+msgstr ""
+
+#: views/calendar.php:40
+msgid "Published"
+msgstr ""
+
+#: views/accounts.php:21
+msgid "Publishing access"
+msgstr ""
+
+#: includes/Service/TokenExchange.php:299
+msgid "Remote service returned invalid JSON."
+msgstr ""
+
+#: assets/js/composer.js:62
+msgid "Remove"
+msgstr ""
+
+#: views/settings.php:101
+msgid "Remove plugin data during uninstall"
+msgstr ""
+
+#. translators: %d: HTTP status code returned by the REST API.
+#: assets/js/accounts.js:25 assets/js/calendar.js:103 assets/js/composer.js:25
+#: assets/js/settings.js:24
+#, javascript-format
+msgid "Request failed with status %d."
+msgstr ""
+
+#: assets/js/calendar.js:350 assets/js/calendar.js:351
+msgid "Sat"
+msgstr ""
+
+#: views/composer.php:89
+msgid "Save"
+msgstr ""
+
+#: views/settings.php:109
+msgid "Save Settings"
+msgstr ""
+
+#: assets/js/composer.js:148
+msgid "Saving and publishing..."
+msgstr ""
+
+#: assets/js/composer.js:138 assets/js/settings.js:51
+msgid "Saving..."
+msgstr ""
+
+#: views/calendar.php:39
+msgid "Scheduled"
+msgstr ""
+
+#: includes/Service/PostService.php:205 includes/Service/PostService.php:266
+msgid "Scheduled date must be a valid ISO 8601 date string."
+msgstr ""
+
+#: views/composer.php:34
+msgid "Select connected account"
+msgstr ""
+
+#. translators: %s: required account platform.
+#: includes/Service/PublishService.php:468
+#, php-format
+msgid "Selected account is not a %s account."
+msgstr ""
+
+#: includes/Service/PublishService.php:461
+msgid ""
+"Selected connected account no longer exists. Please reselect destination."
+msgstr ""
+
+#: includes/Admin/AdminMenu.php:49 views/settings.php:35
+msgid "Settings"
+msgstr ""
+
+#: assets/js/settings.js:56
+msgid "Settings saved."
+msgstr ""
+
+#: includes/Admin/AdminMenu.php:37 includes/Admin/AdminMenu.php:38
+#: views/calendar.php:14
+msgid "Social Scheduler"
+msgstr ""
+
+#: includes/Admin/CronNoticeRenderer.php:56
+msgid "Social Scheduler cron"
+msgstr ""
+
+#: includes/Service/PostService.php:387
+msgid "Social account ID must be a positive integer."
+msgstr ""
+
+#: includes/Service/PostService.php:391
+msgid "Social account ID must reference a connected account."
+msgstr ""
+
+#: includes/Service/PostService.php:338
+msgid "Start and end dates must be provided together."
+msgstr ""
+
+#: includes/Service/PostService.php:341 includes/Service/PostService.php:342
+msgid "Start and end dates must be valid ISO 8601 date strings."
+msgstr ""
+
+#: includes/Service/PostService.php:344
+msgid "Start date must be earlier than end date."
+msgstr ""
+
+#: views/composer.php:63
+msgid "Status"
+msgstr ""
+
+#. translators: %s: comma-separated list of allowed post statuses.
+#: includes/Service/PostService.php:321 includes/Service/PostService.php:419
+#, php-format
+msgid "Status must be one of: %s"
+msgstr ""
+
+#. translators: 1: current post status, 2: requested post status.
+#: includes/Service/PostService.php:280
+#, php-format
+msgid "Status transition %1$s -> %2$s is not allowed."
+msgstr ""
+
+#. translators: %s: comma-separated list of platforms that support story posts.
+#: includes/Service/PostService.php:378
+#, php-format
+msgid "Stories are only supported on: %s"
+msgstr ""
+
+#: views/composer.php:57
+msgid "Story post"
+msgstr ""
+
+#: includes/Service/PostService.php:129
+msgid "Story posts only support video media."
+msgstr ""
+
+#. translators: %s: WordPress cron URL.
+#: includes/Admin/CronNoticeRenderer.php:51
+#, php-format
+msgid "Suggested cron command: * * * * * wget -q -O - %s >/dev/null 2>&1"
+msgstr ""
+
+#: assets/js/calendar.js:350 assets/js/calendar.js:351
+msgid "Sun"
+msgstr ""
+
+#: views/settings.php:72
+msgid "Sunday"
+msgstr ""
+
+#: assets/js/calendar.js:350 assets/js/calendar.js:351
+msgid "Thu"
+msgstr ""
+
+#: views/settings.php:56
+msgid "TikTok"
+msgstr ""
+
+#: views/settings.php:87
+msgid "TikTok Client Key"
+msgstr ""
+
+#: includes/Service/TikTokOAuthService.php:111
+msgid ""
+"TikTok Client Key and Client Secret must be configured before connecting an "
+"account."
+msgstr ""
+
+#: includes/Service/TokenExchange.php:131
+msgid ""
+"TikTok Client Key, TikTok Client Secret, and TikTok Redirect URI must be set."
+msgstr ""
+
+#: views/settings.php:90
+msgid "TikTok Client Secret"
+msgstr ""
+
+#: views/settings.php:93
+msgid "TikTok Redirect URI"
+msgstr ""
+
+#: includes/Service/Publish/TikTokPublisher.php:50
+msgid "TikTok access token expired. Please reconnect."
+msgstr ""
+
+#: includes/Admin/AdminMenu.php:152
+msgid "TikTok account connected successfully."
+msgstr ""
+
+#: includes/Service/PostService.php:125
+msgid "TikTok posts only support video media."
+msgstr ""
+
+#: includes/Service/Publish/TikTokPublisher.php:31
+msgid "TikTok posts require at least one video."
+msgstr ""
+
+#. translators: %s: TikTok API status message.
+#: includes/Service/Publish/TikTokPublisher.php:109
+#, php-format
+msgid "TikTok publish failed: %s"
+msgstr ""
+
+#: includes/Service/Publish/TikTokPublisher.php:92
+msgid "TikTok publish status fetch failed"
+msgstr ""
+
+#: includes/Service/Publish/TikTokPublisher.php:118
+msgid "TikTok publish timed out."
+msgstr ""
+
+#: includes/Service/Publish/TikTokPublisher.php:80
+msgid "TikTok video init did not return a publish ID."
+msgstr ""
+
+#: includes/Service/Publish/TikTokPublisher.php:75
+msgid "TikTok video init failed"
+msgstr ""
+
+#. translators: 1: HTTP status code, 2: response body.
+#: includes/Service/ExternalPosts/TikTokPostFetcher.php:45
+#, php-format
+msgid "TikTok video list failed (%1$s): %2$s"
+msgstr ""
+
+#: includes/Service/ExternalPosts/TikTokPostFetcher.php:54
+msgid "TikTok video list returned invalid JSON."
+msgstr ""
+
+#. translators: %s: TikTok account display name.
+#: views/composer.php:39
+#, php-format
+msgid "TikTok — %s"
+msgstr ""
+
+#: views/settings.php:43
+msgid "Timezone"
+msgstr ""
+
+#. translators: %s: comma-separated list of allowed time zones.
+#: includes/Service/SettingsService.php:74
+#, php-format
+msgid "Timezone must be one of: %s"
+msgstr ""
+
+#: views/calendar.php:27
+msgid "Today"
+msgstr ""
+
+#: assets/js/calendar.js:350 assets/js/calendar.js:351
+msgid "Tue"
+msgstr ""
+
+#: includes/Service/MediaService.php:118
+msgid "Unable to create Instagram JPEG attachment."
+msgstr ""
+
+#: includes/Service/Publish/MetaPublisher.php:521
+msgid "Unknown error"
+msgstr ""
+
+#: includes/Service/PublishService.php:127
+msgid "Unsupported Meta target platform."
+msgstr ""
+
+#. translators: 1: uploaded file MIME type, 2: comma-separated list of allowed MIME types.
+#: includes/Service/PostService.php:117
+#, php-format
+msgid "Unsupported file type: %1$s. Allowed types: %2$s"
+msgstr ""
+
+#: assets/js/calendar.js:299
+msgid "Untitled post"
+msgstr ""
+
+#: assets/js/composer.js:76
+msgid "Use selected media"
+msgstr ""
+
+#: assets/js/calendar.js:29
+msgid "Video media"
+msgstr ""
+
+#: includes/Admin/AdminMenu.php:105
+msgid "View not found."
+msgstr ""
+
+#: includes/Admin/CronNoticeRenderer.php:47
+msgid ""
+"WP-Cron is disabled. Make sure a system cron job calls wp-cron.php every "
+"minute so scheduled social posts publish on time."
+msgstr ""
+
+#: includes/Admin/CronNoticeRenderer.php:48
+msgid ""
+"WP-Cron is enabled. For reliable scheduled publishing, disable WP-Cron and "
+"configure a system cron job that calls wp-cron.php every minute."
+msgstr ""
+
+#: assets/js/calendar.js:350 assets/js/calendar.js:351
+msgid "Wed"
+msgstr ""
+
+#: includes/Rest/AuthController.php:127 includes/Rest/RestRouter.php:263
+msgid "You are not allowed to manage the social scheduler."
+msgstr ""
+
+#. translators: %s: fetch error message.
+#: includes/Service/ExternalPosts/MetaPostFetcher.php:58
+#, php-format
+msgid "facebook: %s"
+msgstr ""
+
+#: includes/Service/PublishService.php:268
+msgid "facebook: connected account not found"
+msgstr ""
+
+#: includes/Service/PublishService.php:263
+msgid "facebook: no connected account"
+msgstr ""
+
+#. translators: %s: fetch error message.
+#: includes/Service/ExternalPosts/MetaPostFetcher.php:76
+#, php-format
+msgid "instagram: %s"
+msgstr ""
+
+#: includes/Service/Publish/TikTokPublisher.php:110
+msgid "unknown error"
+msgstr ""
