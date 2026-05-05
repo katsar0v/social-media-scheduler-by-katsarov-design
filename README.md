@@ -67,7 +67,7 @@ The plugin is built as a modern WordPress plugin with strict PHP types, PSR-4-st
 Place the plugin directory inside WordPress:
 
 ```bash
-wp-content/plugins/social-media-scheduler-by-katsarov-design
+wp-content/plugins/social-media-scheduler
 ```
 
 Install the PHP autoloader and dependencies when installing from source:
@@ -79,7 +79,7 @@ composer install --no-dev
 Activate the plugin in WordPress:
 
 ```bash
-wp plugin activate social-media-scheduler-by-katsarov-design
+wp plugin activate social-media-scheduler
 ```
 
 You can also activate it from `Plugins` in the WordPress admin.
@@ -238,19 +238,19 @@ docker ps -a
 Run PHPUnit in the WordPress test container:
 
 ```bash
-docker exec -w /var/www/html/wp-content/plugins/social-media-scheduler-by-katsarov-design php vendor/bin/phpunit -c phpunit.xml.dist
+docker exec -w /var/www/html/wp-content/plugins/social-media-scheduler php vendor/bin/phpunit -c phpunit.xml.dist
 ```
 
 Run PHP syntax checks:
 
 ```bash
-docker exec -w /var/www/html/wp-content/plugins/social-media-scheduler-by-katsarov-design php composer lint:syntax
+docker exec -w /var/www/html/wp-content/plugins/social-media-scheduler php composer lint:syntax
 ```
 
 Run WordPress coding standards:
 
 ```bash
-docker exec -w /var/www/html/wp-content/plugins/social-media-scheduler-by-katsarov-design php composer lint:phpcs
+docker exec -w /var/www/html/wp-content/plugins/social-media-scheduler php composer lint:phpcs
 ```
 
 There is no frontend build step. Admin CSS and JavaScript live directly in `assets/css` and `assets/js`.
@@ -277,13 +277,13 @@ languages/                       POT, PO, MO, and JS translation files
 Generate the translation template:
 
 ```bash
-docker exec -w /var/www/html/wp-content/plugins/social-media-scheduler-by-katsarov-design php wp i18n make-pot . languages/social-media-scheduler.pot --exclude=vendor,node_modules --allow-root
+docker exec -w /var/www/html/wp-content/plugins/social-media-scheduler php wp i18n make-pot . languages/social-media-scheduler.pot --exclude=vendor,node_modules --allow-root
 ```
 
 Generate JavaScript translation JSON files after updating `.po` files:
 
 ```bash
-docker exec -w /var/www/html/wp-content/plugins/social-media-scheduler-by-katsarov-design php wp i18n make-json languages --no-purge --allow-root
+docker exec -w /var/www/html/wp-content/plugins/social-media-scheduler php wp i18n make-json languages --no-purge --allow-root
 ```
 
 Do not edit generated JSON translation files by hand.

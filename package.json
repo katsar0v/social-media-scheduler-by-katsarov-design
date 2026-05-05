@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "docker:status": "docker ps -a",
-    "test:phpunit": "docker exec -w /var/www/html/wp-content/plugins/social-media-scheduler-by-katsarov-design php vendor/bin/phpunit -c phpunit.xml.dist",
-    "i18n:pot": "docker exec -w /var/www/html/wp-content/plugins/social-media-scheduler-by-katsarov-design php wp i18n make-pot . languages/social-media-scheduler.pot --exclude=vendor,node_modules --allow-root",
-    "i18n:json": "docker exec -w /var/www/html/wp-content/plugins/social-media-scheduler-by-katsarov-design php wp i18n make-json languages --no-purge --allow-root"
+    "test:phpunit": "docker exec -w /var/www/html/wp-content/plugins/social-media-scheduler php vendor/bin/phpunit -c phpunit.xml.dist",
+    "i18n:pot": "docker exec -w /var/www/html/wp-content/plugins/social-media-scheduler php wp i18n make-pot . languages/social-media-scheduler.pot --exclude=vendor,node_modules --allow-root",
+    "i18n:json": "docker exec -w /var/www/html/wp-content/plugins/social-media-scheduler php wp i18n make-json languages --no-purge --allow-root"
   }
 }

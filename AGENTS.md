@@ -6,10 +6,10 @@ Uses a modern PHP architecture with PSR-4 autoloading, strict types, and reposit
 
 ## Developer Commands
 - **Container status**: `docker ps -a` (Use this first to confirm local containers are up).
-- **Testing**: `docker exec -w /var/www/html/wp-content/plugins/social-media-scheduler-by-katsarov-design php vendor/bin/phpunit -c phpunit.xml.dist` (Runs PHPUnit in the `php` container).
-- **Linting**: `docker exec -w /var/www/html/wp-content/plugins/social-media-scheduler-by-katsarov-design php composer lint:phpcs` (Checks WordPress coding standards in the `php` container).
-- **Syntax**: `docker exec -w /var/www/html/wp-content/plugins/social-media-scheduler-by-katsarov-design php composer lint:syntax` (Runs quick PHP syntax checks in the `php` container).
-- **Translations**: `docker exec -w /var/www/html/wp-content/plugins/social-media-scheduler-by-katsarov-design php wp i18n make-pot . languages/social-media-scheduler.pot --exclude=vendor,node_modules --allow-root` followed by `docker exec -w /var/www/html/wp-content/plugins/social-media-scheduler-by-katsarov-design php wp i18n make-json languages --no-purge --allow-root`.
+- **Testing**: `docker exec -w /var/www/html/wp-content/plugins/social-media-scheduler php vendor/bin/phpunit -c phpunit.xml.dist` (Runs PHPUnit in the `php` container).
+- **Linting**: `docker exec -w /var/www/html/wp-content/plugins/social-media-scheduler php composer lint:phpcs` (Checks WordPress coding standards in the `php` container).
+- **Syntax**: `docker exec -w /var/www/html/wp-content/plugins/social-media-scheduler php composer lint:syntax` (Runs quick PHP syntax checks in the `php` container).
+- **Translations**: `docker exec -w /var/www/html/wp-content/plugins/social-media-scheduler php wp i18n make-pot . languages/social-media-scheduler.pot --exclude=vendor,node_modules --allow-root` followed by `docker exec -w /var/www/html/wp-content/plugins/social-media-scheduler php wp i18n make-json languages --no-purge --allow-root`.
 
 ## Architecture & Conventions
 - **Autoloading**: PSR-4 `KatsarovDesign\SocialMediaScheduler\` maps to `./includes/`.
