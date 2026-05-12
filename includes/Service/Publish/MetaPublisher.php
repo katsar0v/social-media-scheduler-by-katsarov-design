@@ -104,6 +104,112 @@ final class MetaPublisher {
 	}
 
 	/**
+	 * Publish an IG container with retry logic for transient API errors.
+	 *
+	 * Meta's Graph API may return transient errors (e.g. OAuthException with
+	 * is_transient=true) even when the publish actually succeeds. This method
+	 * retries on transient errors and detects containers that were already
+	 * consumed by a previous successful-but-errored attempt.
+	 *
+	 * @param string $ig_business_id Instagram business account ID.
+	 * @param string $container_id   ID of the FINISHED media container.
+	 * @param string $page_token     Page access token.
+	 * @param string $context        Human-readable context for error messages.
+	 * @return array{id:string,permalink:?string}
+	 */
+	private function publish_ig_container_with_retry( string $ig_business_id, string $container_id, string $page_token, string $context ): array {
+		$url  = $this->graph_url( "{$ig_business_id}/media_publish" );
+		$body = wp_json_encode( array( 'creation_id' => $container_id, 'access_token' => $page_token ) );
+
+		for ( $attempt = 1; $attempt <= self::IG_CONTAINER_MAX_ATTEMPTS; ++$attempt ) {
+			try {
+				$published = $this->request_json(
+					$url,
+					array(
+						'method'  => 'POST',
+						'headers' => array( 'Content-Type' => 'application/json' ),
+						'body'    => $body,
+					),
+					$context
+				);
+
+				return array(
+					'id'        => (string) $published['id'],
+					'permalink' => $this->fetch_instagram_permalink( (string) $published['id'], $page_token ),
+				);
+			} catch ( PublishError $e ) {
+				$error_body = is_string( $e->platform_error() ) ? $e->platform_error() : '';
+
+				if ( $this->is_container_already_published( $container_id, $page_token ) ) {
+					$media_id = $this->find_recent_ig_media( $ig_business_id, $page_token );
+					if ( null !== $media_id ) {
+						return array(
+							'id'        => $media_id,
+							'permalink' => $this->fetch_instagram_permalink( $media_id, $page_token ),
+						);
+					}
+				}
+
+				if ( $attempt < self::IG_CONTAINER_MAX_ATTEMPTS && $this->is_transient_ig_media_error( $e->getCode(), $error_body ) ) {
+					sleep( self::IG_CONTAINER_RETRY_SECONDS * $attempt );
+					continue;
+				}
+
+				throw $e;
+			}
+		}
+
+		throw new PublishError( $context, 500 );
+	}
+
+	/**
+	 * Check whether an IG container has already been consumed by a publish.
+	 *
+	 * @param string $container_id Container ID to check.
+	 * @param string $page_token   Page access token.
+	 */
+	private function is_container_already_published( string $container_id, string $page_token ): bool {
+		try {
+			$data = $this->request_json(
+				$this->graph_url( $container_id, array( 'fields' => 'status_code', 'access_token' => $page_token ) ),
+				array(),
+				''
+			);
+
+			return 'FINISHED' !== ( $data['status_code'] ?? '' );
+		} catch ( PublishError ) {
+			return true;
+		}
+	}
+
+	/**
+	 * Fetch the most recent IG media ID for a business account.
+	 *
+	 * Used as a fallback when a media_publish call returned a transient error
+	 * but the container was already consumed (post appeared on Instagram).
+	 *
+	 * @param string $ig_business_id Instagram business account ID.
+	 * @param string $page_token     Page access token.
+	 */
+	private function find_recent_ig_media( string $ig_business_id, string $page_token ): ?string {
+		try {
+			$data = $this->request_json(
+				$this->graph_url( "{$ig_business_id}/media", array( 'fields' => 'id', 'limit' => '1', 'access_token' => $page_token ) ),
+				array(),
+				''
+			);
+
+			if ( is_array( $data['data'] ?? null ) && ! empty( $data['data'][0]['id'] ) ) {
+				return (string) $data['data'][0]['id'];
+			}
+		} catch ( PublishError ) {
+			// Ignore – we'll fall through to the normal error path.
+		}
+
+		return null;
+	}
+
+	/**
 	 * @param array<string,mixed> $post Scheduled post.
 	 * @return array{id:string,isScheduled:bool,permalink:?string}
 	 */
@@ -240,17 +346,12 @@ final class MetaPublisher {
 			$container_id = $container['id'];
 			$this->wait_for_ig_container( $container_id, $page_token, __( 'Instagram carousel container', 'social-media-scheduler' ) );
 
-			$published = $this->request_json(
-				$this->graph_url( "{$ig_business_id}/media_publish" ),
-				array(
-					'method'  => 'POST',
-					'headers' => array( 'Content-Type' => 'application/json' ),
-					'body'    => wp_json_encode( array( 'creation_id' => $container_id, 'access_token' => $page_token ) ),
-				),
+			return $this->publish_ig_container_with_retry(
+				$ig_business_id,
+				$container_id,
+				$page_token,
 				__( 'Instagram carousel publish failed', 'social-media-scheduler' )
 			);
-
-			return array( 'id' => (string) $published['id'], 'permalink' => $this->fetch_instagram_permalink( (string) $published['id'], $page_token ) );
 		}
 
 		$first = $media[0];
@@ -269,17 +370,12 @@ final class MetaPublisher {
 		$container = $this->create_ig_container( $this->graph_url( "{$ig_business_id}/media" ), $body, __( 'Instagram container creation', 'social-media-scheduler' ) );
 		$this->wait_for_ig_container( $container['id'], $page_token, __( 'Instagram container', 'social-media-scheduler' ) );
 
-		$published = $this->request_json(
-			$this->graph_url( "{$ig_business_id}/media_publish" ),
-			array(
-				'method'  => 'POST',
-				'headers' => array( 'Content-Type' => 'application/json' ),
-				'body'    => wp_json_encode( array( 'creation_id' => $container['id'], 'access_token' => $page_token ) ),
-			),
+		return $this->publish_ig_container_with_retry(
+			$ig_business_id,
+			$container['id'],
+			$page_token,
 			__( 'Instagram publish failed', 'social-media-scheduler' )
 		);
-
-		return array( 'id' => (string) $published['id'], 'permalink' => $this->fetch_instagram_permalink( (string) $published['id'], $page_token ) );
 	}
 
 	public function publishToInstagram( array $post, string $ig_business_id, string $page_token ): array {
@@ -393,17 +489,13 @@ final class MetaPublisher {
 		}
 
 		$this->wait_for_ig_container( $container_id, $page_token, __( 'Instagram Story container', 'social-media-scheduler' ) );
-		$published = $this->request_json(
-			$this->graph_url( "{$ig_business_id}/media_publish" ),
-			array(
-				'method'  => 'POST',
-				'headers' => array( 'Content-Type' => 'application/json' ),
-				'body'    => wp_json_encode( array( 'creation_id' => $container_id, 'access_token' => $page_token ) ),
-			),
+
+		return $this->publish_ig_container_with_retry(
+			$ig_business_id,
+			$container_id,
+			$page_token,
 			__( 'Instagram Story publish failed', 'social-media-scheduler' )
 		);
-
-		return array( 'id' => (string) $published['id'], 'permalink' => $this->fetch_instagram_permalink( (string) $published['id'], $page_token ) );
 	}
 
 	public function publishInstagramStory( array $post, string $ig_business_id, string $page_token ): array {
